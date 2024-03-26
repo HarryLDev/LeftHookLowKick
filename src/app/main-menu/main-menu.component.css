@@ -5,9 +5,62 @@
   height: 900px;
   margin: 0 auto;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.button{
-  
+.title {
+  text-align: center;
+  color: crimson;
+  font-family: SHATTERB;
+  font-weight: bolder;
+  font-size: 100px;
+  animation: pulseAnimation 0.5s infinite alternate;
 }
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+
+.play-button{
+    width: 200px;
+    height: 150px;
+    border-radius: 20%;
+    font-size: 80px;
+    font-family: SHATTERB;
+    color: crimson;
+    background-color: black;
+    transition: transform 0.2s ease-in-out;
+    border-style: none;
+
+}
+
+.help-button{
+  width: 200px;
+  height: 150px;
+  border-radius: 20%;
+  font-size: 80px;
+  font-family: SHATTERB;
+  color: crimson;
+  background-color: black;
+  transition: transform 0.2s ease-in-out;
+  border-style: none;
+
+}
+
+button:hover{
+  background-color: crimson;
+  color: white;
+  transform: scale(1.05);
+}
+
+
 
