@@ -1,2 +1,0 @@
-# LeftHookLowKick
-Vidya game
