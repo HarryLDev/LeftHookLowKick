@@ -1,0 +1,45 @@
+.play-button{
+  width: 200px;
+  height: 150px;
+  border-radius: 20%;
+  font-size: 80px;
+  font-family: SHATTERB;
+  color: crimson;
+  background-color: rgb(47, 6, 158);
+  transition: transform 0.2s ease-in-out;
+  border-style: none;
+
+}
+
+.help-button{
+width: 200px;
+height: 150px;
+border-radius: 20%;
+font-size: 80px;
+font-family: SHATTERB;
+color: crimson;
+background-color: rgb(47, 6, 158);
+transition: transform 0.2s ease-in-out;
+border-style: none;
+
+}
+
+.whole-container{
+  background-color: rgb(47, 6, 158);
+  padding: 10px;
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+button:hover{
+  background-color: crimson;
+  color: white;
+  transform: scale(1.05);
+}

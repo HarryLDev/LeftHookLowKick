@@ -1,4 +1,4 @@
-.helpPage{
+.playerTypePage{
 
   background-color: crimson;
   width: 900px;
@@ -12,16 +12,18 @@
   border-color: rgb(143, 7, 7);
   font-family: SHATTERB;
   color: white;
+  justify-content: center;
+
 
 }
 
-.back-button{
-  width: 100px;
-  height: 50px;
+.button{
+  width: 400px;
+  height: 200px;
   border-radius: 20%;
-  font-size: 30px;
+  font-size: 80px;
   font-family: SHATTERB;
-
+  margin: 30px;
   background-color: white;
   color: crimson;
   transition: transform 0.2s ease-in-out;
@@ -34,6 +36,4 @@ button:hover{
   background-color: rgb(47, 6, 158);
   transform: scale(1.05);
 }
-
-
 
