@@ -1,4 +1,4 @@
-.difficultySelectPage{
+.container{
 
   background-color: crimson;
   width: 900px;
@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   border-style: inset;
-  border-width: 20px;
+  border-width: 25px;
   border-color: rgb(143, 7, 7);
   font-family: SHATTERB;
   color: white;
@@ -18,8 +18,8 @@
 }
 
 .button{
-  width: 400px;
-  height: 200px;
+  width: 300px;
+  height: 150px;
   border-radius: 20%;
   font-size: 80px;
   font-family: SHATTERB;
@@ -37,3 +37,34 @@ button:hover{
   transform: scale(1.05);
 }
 
+mat-slider{
+  width: 800px;
+  margin: 40px;
+
+}
+
+.back-button{
+  min-width: 170px;
+  min-height: 80px;
+  border-radius: 20%;
+  font-size: 40px;
+  font-family: SHATTERB;
+  margin: 30px;
+  color: crimson;
+  background-color: black;
+  transition: transform 0.2s ease-in-out;
+  border-style: none;
+
+}
+
+back-button:hover{
+  background-color: white;
+  color: crimson;
+  transform: scale(1.05);
+}
+
+mat-slider{
+  width: 800px;
+  margin: 40px;
+
+}
