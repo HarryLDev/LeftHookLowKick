@@ -24,16 +24,16 @@
   font-size: 80px;
   font-family: SHATTERB;
   margin: 30px;
-  background-color: white;
   color: crimson;
+  background-color: black;
   transition: transform 0.2s ease-in-out;
   border-style: none;
 
 }
 
 button:hover{
+  background-color: white;
   color: crimson;
-  background-color: rgb(47, 6, 158);
   transform: scale(1.05);
 }
 

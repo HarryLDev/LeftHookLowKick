@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
-import { fadeInAnimation } from '../animations';
+import { fadeInAnimation } from '../external-files/animations';
 
 @Component({
   selector: 'app-main-menu',

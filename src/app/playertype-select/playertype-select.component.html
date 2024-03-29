@@ -1,6 +1,6 @@
 <div class="playerTypePage">
-  <button class = "button"> Local</button>
+  <button class = "button" (click)="selectLocalMode()" [routerLink]="['/difficulty-select']" routerLinkActive="router-link-active"> LOCAL</button>
 
-  <button class = "button"> BOT</button>
+  <button class = "button" (click)="selectBotMode()" [routerLink]="['/difficulty-select']" routerLinkActive="router-link-active"> BOT</button>
 
 </div>
