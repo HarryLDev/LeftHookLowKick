@@ -2,13 +2,15 @@
 
 
 
-  <div style="font-size: 80px; margin-top: 10px;">SELECT NUMBER OF LIVES</div>
+  <div style="font-size: 80px; margin-top: 10px;   -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */">SELECT NUMBER OF LIVES</div>
 
-  <mat-slider min="0" max="10" step="1" showTickMarks discrete>
+  <mat-slider min="1" max="10" step="1" showTickMarks discrete>
     <input matSliderThumb>
   </mat-slider>
 
-  <button class="button">START</button>
+  <button class="button" [routerLink]="['/game']" routerLinkActive="router-link-active" >START</button>
 
   <button class="back-button" [routerLink]="['/player-type']" routerLinkActive="router-link-active" >Back</button>
 
