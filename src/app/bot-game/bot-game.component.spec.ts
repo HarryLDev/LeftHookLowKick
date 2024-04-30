@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameComponent } from './game.component';
+import { GameComponent } from './bot-game.component';
 
 describe('GameComponent', () => {
   let component: GameComponent;
@@ -11,7 +11,7 @@ describe('GameComponent', () => {
       imports: [GameComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(GameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

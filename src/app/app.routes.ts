@@ -5,7 +5,9 @@ import { PlayertypeSelectComponent } from './playertype-select/playertype-select
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { LivesSelectComponent } from './lives-select/lives-select.component';
-import { GameComponent } from './game/game.component';
+import { BotGameComponent } from './bot-game/bot-game.component';
+import { PopupHelpComponent } from './popup-help/popup-help.component';
+import { LocalGameComponent } from './local-game/local-game.component';
 
 export const routes: Routes = [
 
@@ -13,6 +15,9 @@ export const routes: Routes = [
   {path: 'player-type', component: PlayertypeSelectComponent},
   {path: '', component: MainMenuComponent},
   {path: 'lives', component: LivesSelectComponent},
-  {path: 'game', component: GameComponent}
+  {path: 'bot-game', component: BotGameComponent},
+  {path: 'popup-help', component: PopupHelpComponent},
+  {path: 'local-game', component: LocalGameComponent}
+
 
 ];

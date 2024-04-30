@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { SharedService } from '../shared.service';
 
 
 
@@ -11,17 +12,18 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './playertype-select.component.css'
 })
 export class PlayertypeSelectComponent {
-  isLocalSelected: boolean = false;
-  isBotSelected: boolean = false;
+
+  constructor(private sharedService: SharedService) {}
 
   selectLocalMode(): void {
-    this.isLocalSelected = true;
-    this.isBotSelected = false;
+    this.sharedService.setPlayerType("local");
+    console.log("Local Mode Selected");
+
   }
 
   selectBotMode(): void {
-    this.isLocalSelected = false;
-    this.isBotSelected = true;
+    this.sharedService.setPlayerType("bot");
+    console.log("Bot Mode Selected");
   }
 
 }

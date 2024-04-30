@@ -1,0 +1,156 @@
+<body>
+  <div class="">
+    <button class="comp-buttons" [routerLink]="['/']" routerLinkActive="router-link-active">
+      Home
+    </button>
+
+  </div>
+  <div class="container">
+    <div class="box">
+      <!-- Player 1 Box -->
+      <div class="player-label">Player 1</div>
+        <!-- head -->
+
+          <svg width="100" height="100">
+          <circle cx="50" cy="50" r="40" fill="black" />
+        </svg>
+
+        <!-- body and arms-->
+
+          <div>
+            <svg width="100" height="130">
+              <rect x="50" y="0" width="40" height="120" fill="grey" />
+            </svg>
+
+            <svg width="100" height="130">
+              <rect x="0" y="0" width="100" height="120" fill="black" />
+            </svg>
+            <svg width="100" height="130">
+              <rect x="10" y="0" width="40" height="120" fill="grey" />
+            </svg>
+          </div>
+
+        <!-- legs -->
+
+          <div>
+            <svg width="100" height="120">
+              <rect x="50" y="0" width="40" height="120" fill="black" />
+            </svg>
+
+            <svg width="100" height="120">
+              <rect x="10" y="0" width="40" height="120" fill="black" />
+            </svg>
+
+
+
+          </div>
+          <!-- lives container -->
+          <div>
+            <div class="lives-container">
+              <span *ngFor="let _ of players.player1.livesArray" class="life-icon"></span>
+            </div>
+          </div>
+
+
+
+    </div>
+    <div class="box">
+      <!-- Attack/Defend Box -->
+      <div class="player-label">{{currentPlayer}}'s' Turn</div>
+         <!-- head -->
+         <button class="abutton" onclick="">
+          <svg width="100" height="100">
+          <circle cx="50" cy="50" r="40" fill="black" />
+        </svg>
+      </button>
+
+        <!-- body and arms-->
+
+          <div>
+            <svg width="100" height="130">
+              <rect x="50" y="0" width="40" height="120" fill="grey" />
+            </svg>
+            <button class="abutton">
+            <svg width="100" height="130">
+              <rect x="0" y="0" width="100" height="120" fill="black" />
+            </svg>
+          </button>
+            <svg width="100" height="130">
+              <rect x="10" y="0" width="40" height="120" fill="grey" />
+            </svg>
+          </div>
+
+        <!-- legs -->
+
+        <div>
+          <button class="abutton">
+             <svg width="100" height="120">
+               <rect x="50" y="0" width="40" height="120" fill="black" />
+             </svg>
+
+             <svg width="100" height="120">
+               <rect x="10" y="0" width="40" height="120" fill="black" />
+             </svg>
+           </button>
+
+
+           </div>
+        <div>
+          <button (click)="switchTurn()" class="finishButton">Finish Turn</button>
+        </div>
+
+
+    </div>
+    <div class="box">
+      <!-- Player 2 Box -->
+      <div class="player-label">Player 2</div>
+        <!-- head -->
+
+          <svg width="100" height="100">
+          <circle cx="50" cy="50" r="40" fill="black" />
+        </svg>
+
+
+        <!-- body and arms-->
+
+          <div>
+            <svg width="100" height="130">
+              <rect x="50" y="0" width="40" height="120" fill="grey" />
+            </svg>
+
+            <svg width="100" height="130">
+              <rect x="0" y="0" width="100" height="120" fill="black" />
+            </svg>
+
+            <svg width="100" height="130">
+              <rect x="10" y="0" width="40" height="120" fill="grey" />
+            </svg>
+          </div>
+
+        <!-- legs -->
+
+
+        <div>
+
+             <svg width="100" height="120">
+               <rect x="50" y="0" width="40" height="120" fill="black" />
+             </svg>
+
+             <svg width="100" height="120">
+               <rect x="10" y="0" width="40" height="120" fill="black" />
+             </svg>
+
+
+
+           </div>
+          <!-- lives container -->
+          <div>
+            <div class="lives-container">
+              <span *ngFor="let _ of players.player2.livesArray" class="life-icon"></span>
+            </div>
+          </div>
+
+    </div>
+  </div>
+</body>
+
