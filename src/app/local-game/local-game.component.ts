@@ -66,6 +66,21 @@ export class LocalGameComponent {
 
   }
 
+  private updateLifeArrayP1(): void {
+    this.players.player1.livesArray.length = 0;
+
+    for (let i = 0; i < this.players.player1.lives; i++) {
+      this.players.player1.livesArray[i] = 0;
+    }
+  }
+  private updateLifeArrayP2(): void {
+    this.players.player2.livesArray.length = 0;
+
+    for (let i = 0; i < this.players.player2.lives; i++) {
+      this.players.player2.livesArray[i] = 0;
+    }
+  }
+
 
   //select body part
   selectPart(player: 'Player 1' | 'Player 2', part: 'head' | 'body' | 'legs' | null) {
@@ -84,9 +99,18 @@ export class LocalGameComponent {
 
         if (winner === this.players.player1) {
             this.players.player2.lives -= 1; // player2 loses a life if player1 wins
+            this.updateLifeArrayP2();
+
+
         } else if (winner === this.players.player2) {
             this.players.player1.lives -= 1; // player1 loses a life if player2 wins
+            this.updateLifeArrayP1();
+
+
         }
+        console.log("player 1 lives:" , this.players.player1.lives);
+        console.log("player 2 lives:" , this.players.player2.lives);
+
 
         // Increase the round number after processing the turn
         this.RoundNum += 1;
@@ -99,12 +123,12 @@ export class LocalGameComponent {
   }
 
   //End Round and determine round winner
-  determineWinner(p1Move:any, p2Move: any) {
+  determineWinner(p1Move: any, p2Move: any) {
     if (p1Move === p2Move) {
         return null; // It's a draw
-    } else if ((p1Move === 'Head Shot' && p2Move === 'Body Shot') ||
-               (p1Move === 'Body Shot' && p2Move === 'Low Kick') ||
-               (p1Move === 'Low Kick' && p2Move === 'Head Shot')) {
+    } else if ((p1Move === 'head' && p2Move === 'body') ||
+               (p1Move === 'body' && p2Move === 'legs') ||
+               (p1Move === 'legs' && p2Move === 'head')) {
         return this.players.player1; // Player 1 wins the round
     } else {
         return this.players.player2; // Player 2 wins the round
