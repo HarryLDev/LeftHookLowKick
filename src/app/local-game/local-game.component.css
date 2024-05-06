@@ -10,7 +10,7 @@
   align-items: center;
   width: 1200px;
   height: 500px;
-  justify-content: center;
+  justify-content: space-between;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -27,12 +27,13 @@
   align-items: center;
 
 
+
 }
 
 .finishButton{
-  width:510px;
+  min-width: 400px;
   height: 45px;
-  border-radius:0;
+  border-radius:10px;
   font-size: 30px;
   margin-top: 20px;
   font-family: SHATTERB;
@@ -106,8 +107,7 @@ mat-slider{
 }
 
 .comp-buttons:hover{
-  background-color: white;
-  color: crimson;
+  color: white;
 }
 .comp-button-container{
   margin: 20px;
@@ -133,11 +133,35 @@ mat-slider{
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+.noPeaking{
+  width: 1000px;
+  height: 30px;
+  font-size: 30px;
+  flex-grow: 1;
+  text-align: center;
+  font-family: SHATTERB;
+  border-radius: 10%;
+  margin: 5px;
+  color: white;
+  background-color: black;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  background-color: black; 
+  padding: 5px;
+  background-color: black;
+}
+
+@keyframes flash {
+  0%, 100% { fill: red; }
+  50% { fill: black; }
+}
+
+.flash-effect {
+  animation: flash 0.5s infinite;
 }

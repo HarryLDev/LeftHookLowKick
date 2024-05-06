@@ -1,0 +1,32 @@
+.box{
+  font-size: 20px;
+  font-family: SHATTERB;
+  border-color: crimson;
+  background-color: crimson;
+  align-items: center;
+  text-align: center;
+  color: white;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.finishButton {
+  min-width: 390px;
+  height: 45px;
+  font-size: 30px;
+  margin-top: 20px;
+  font-family: SHATTERB;
+  background-color: black;
+  color: crimson;
+  transition: transform 0.2s ease-in-out;
+  border-style: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+.finishButton:hover{
+  color: crimson;
+  background-color: white;
+}

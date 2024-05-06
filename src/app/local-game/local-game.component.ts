@@ -2,11 +2,16 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SharedService } from '../shared.service';
 import { NgFor } from '@angular/common';
+import {MatDialogModule} from '@angular/material/dialog';
+import { HelpPopupComponent } from '../help-popup/help-popup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { WinnerPopupComponent } from '../winner-popup/winner-popup.component';
+
 
 @Component({
   selector: 'app-local-game',
   standalone: true,
-  imports: [RouterLink, NgFor],
+  imports: [RouterLink, NgFor, MatDialogModule, HelpPopupComponent],
   templateUrl: './local-game.component.html',
   styleUrl: './local-game.component.css'
 })
@@ -44,14 +49,16 @@ export class LocalGameComponent {
 
 
 
-  constructor(private sharedService: SharedService) {
+  constructor(
+    private dialog: MatDialog,
+    private sharedService: SharedService) {
   }
 
 
   ngOnInit(): void {
     this.numberOfLives = this.sharedService.numberOfLives;
     this.populateLifeArray();
-      //initialize random player
+      //initialize random player at start
   this.currentPlayer = Math.random() < 0.5 ? this.players.player1 : this.players.player2;
   }
 
@@ -100,11 +107,17 @@ export class LocalGameComponent {
         if (winner === this.players.player1) {
             this.players.player2.lives -= 1; // player2 loses a life if player1 wins
             this.updateLifeArrayP2();
+            if(this.players.player2.lives == 0){
+              this.openWinnerPopup('PLAYER 2 BEAT YOU UP!');
+            }
 
 
         } else if (winner === this.players.player2) {
             this.players.player1.lives -= 1; // player1 loses a life if player2 wins
             this.updateLifeArrayP1();
+            if(this.players.player1.lives == 0){
+              this.openWinnerPopup('PLAYER 2 BEAT YOU UP!');
+            }
 
 
         }
@@ -114,6 +127,7 @@ export class LocalGameComponent {
 
         // Increase the round number after processing the turn
         this.RoundNum += 1;
+
 
         // Reset selected parts for the next round
         this.players.player1.selectedPart = null;
@@ -135,7 +149,36 @@ export class LocalGameComponent {
     }
 }
 
+openHelpPopup(width: string = '400px'): void {
+  const dialogRef = this.dialog.open(HelpPopupComponent, {
+    width: width
+  });
+}
 
+openWinnerPopup(player: string): void {
+  const dialogRef = this.dialog.open(WinnerPopupComponent, {
+  });
+  dialogRef.componentInstance.winner = player
+}
+
+resetGame(): void {
+  // Reset lives
+  this.players.player1.lives = this.numberOfLives;
+  this.players.player2.lives = this.numberOfLives;
+
+  // Reset life arrays
+  this.populateLifeArray();
+
+  // Reset round number
+  this.RoundNum = 1;
+
+  // Reset selected parts
+  this.players.player1.selectedPart = null;
+  this.players.player2.selectedPart = null;
+
+  // Reset current player
+  this.currentPlayer = Math.random() < 0.5 ? this.players.player1 : this.players.player2;
+}
 
 
 }
