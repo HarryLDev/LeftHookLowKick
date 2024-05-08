@@ -108,7 +108,7 @@ export class LocalGameComponent {
             this.players.player2.lives -= 1; // player2 loses a life if player1 wins
             this.updateLifeArrayP2();
             if(this.players.player2.lives == 0){
-              this.openWinnerPopup('PLAYER 2 BEAT YOU UP!');
+              this.openWinnerPopup('PLAYER 1 BEAT YOU UP!');
             }
 
 
@@ -158,7 +158,11 @@ openHelpPopup(width: string = '400px'): void {
 openWinnerPopup(player: string): void {
   const dialogRef = this.dialog.open(WinnerPopupComponent, {
   });
-  dialogRef.componentInstance.winner = player
+  dialogRef.componentInstance.winner = player;
+
+  dialogRef.componentInstance.playAgain.subscribe(() => {
+    this.resetGame();
+  });
 }
 
 resetGame(): void {
@@ -167,7 +171,8 @@ resetGame(): void {
   this.players.player2.lives = this.numberOfLives;
 
   // Reset life arrays
-  this.populateLifeArray();
+  this.players.player1.livesArray = Array(this.players.player1.lives).fill(0);
+  this.players.player2.livesArray = Array(this.players.player2.lives).fill(0);
 
   // Reset round number
   this.RoundNum = 1;
@@ -178,6 +183,9 @@ resetGame(): void {
 
   // Reset current player
   this.currentPlayer = Math.random() < 0.5 ? this.players.player1 : this.players.player2;
+
+  console.log("game reset");
+
 }
 
 
