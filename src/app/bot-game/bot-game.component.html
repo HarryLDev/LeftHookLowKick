@@ -1,10 +1,18 @@
 <body>
-  <div class="">
-    <button class="comp-buttons" [routerLink]="['/']" routerLinkActive="router-link-active">
-      Home
-    </button>
+  <div class="header-container">
+    <div class="rounds">Round {{this.RoundNum}}</div>
+
+    <div class="header-container">
+      <button class="comp-buttons" (click)="openHelpPopup()">
+        HELP
+      </button>
+      <button class="comp-buttons" [routerLink]="['/']" routerLinkActive="router-link-active">
+        HOME
+      </button>
+    </div>
 
   </div>
+
   <div class="container">
     <div class="box">
       <!-- Player 1 Box -->
@@ -12,21 +20,21 @@
         <!-- head -->
 
           <svg width="100" height="100">
-          <circle cx="50" cy="50" r="40" fill="black" />
+           <circle cx="50" cy="50" r="40" fill="crimson" />
         </svg>
 
         <!-- body and arms-->
 
           <div>
             <svg width="100" height="130">
-              <rect x="50" y="0" width="40" height="120" fill="grey" />
+              <rect x="50" y="0" width="40" height="120" fill="crimson" />
             </svg>
 
             <svg width="100" height="130">
-              <rect x="0" y="0" width="100" height="120" fill="black" />
+              <rect x="0" y="0" width="100" height="120" fill="crimson" />
             </svg>
             <svg width="100" height="130">
-              <rect x="10" y="0" width="40" height="120" fill="grey" />
+              <rect x="10" y="0" width="40" height="120" fill="crimson" />
             </svg>
           </div>
 
@@ -34,11 +42,11 @@
 
           <div>
             <svg width="100" height="120">
-              <rect x="50" y="0" width="40" height="120" fill="black" />
+              <rect x="50" y="0" width="40" height="120" fill="crimson" />
             </svg>
 
             <svg width="100" height="120">
-              <rect x="10" y="0" width="40" height="120" fill="black" />
+              <rect x="10" y="0" width="40" height="120" fill="crimson" />
             </svg>
 
 
@@ -55,10 +63,10 @@
 
     </div>
     <div class="box">
-      <!-- Attack/Defend Box -->
-      <div class="player-label">{{currentPlayer}}'s' Turn</div>
+      <!-- Attack Box -->
+      <div class="player-label">{{this.currentPlayer.name}}'s Turn</div>
          <!-- head -->
-         <button class="abutton" onclick="">
+         <button class="abutton" (click)="selectPart(this.currentPlayer.name, 'head')">
           <svg width="100" height="100">
           <circle cx="50" cy="50" r="40" fill="black" />
         </svg>
@@ -67,13 +75,16 @@
         <!-- body and arms-->
 
           <div>
+            <!-- arms -->
             <svg width="100" height="130">
               <rect x="50" y="0" width="40" height="120" fill="grey" />
             </svg>
-            <button class="abutton">
+             <!-- body -->
+            <button class="abutton" (click)="selectPart(this.currentPlayer.name, 'body')">
             <svg width="100" height="130">
               <rect x="0" y="0" width="100" height="120" fill="black" />
             </svg>
+
           </button>
             <svg width="100" height="130">
               <rect x="10" y="0" width="40" height="120" fill="grey" />
@@ -83,7 +94,7 @@
         <!-- legs -->
 
         <div>
-          <button class="abutton">
+          <button class="abutton" (click)="selectPart(this.currentPlayer.name, 'legs')">
              <svg width="100" height="120">
                <rect x="50" y="0" width="40" height="120" fill="black" />
              </svg>
@@ -103,11 +114,11 @@
     </div>
     <div class="box">
       <!-- Player 2 Box -->
-      <div class="player-label">Player 2</div>
+      <div class="player-label">BOT</div>
         <!-- head -->
 
           <svg width="100" height="100">
-          <circle cx="50" cy="50" r="40" fill="black" />
+          <circle cx="50" cy="50" r="40" fill="grey" />
         </svg>
 
 
@@ -119,7 +130,7 @@
             </svg>
 
             <svg width="100" height="130">
-              <rect x="0" y="0" width="100" height="120" fill="black" />
+              <rect x="0" y="0" width="100" height="120" fill="grey" />
             </svg>
 
             <svg width="100" height="130">
@@ -133,11 +144,11 @@
         <div>
 
              <svg width="100" height="120">
-               <rect x="50" y="0" width="40" height="120" fill="black" />
+               <rect x="50" y="0" width="40" height="120" fill="grey" />
              </svg>
 
              <svg width="100" height="120">
-               <rect x="10" y="0" width="40" height="120" fill="black" />
+               <rect x="10" y="0" width="40" height="120" fill="grey" />
              </svg>
 
 

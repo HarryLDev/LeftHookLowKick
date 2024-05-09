@@ -108,7 +108,7 @@ export class LocalGameComponent {
             this.players.player2.lives -= 1; // player2 loses a life if player1 wins
             this.updateLifeArrayP2();
             if(this.players.player2.lives == 0){
-              this.openWinnerPopup('PLAYER 1 BEAT YOU UP!');
+              this.openWinnerPopup('PLAYER 1 BEAT PLAYER 2 UP!');
             }
 
 
@@ -116,7 +116,7 @@ export class LocalGameComponent {
             this.players.player1.lives -= 1; // player1 loses a life if player2 wins
             this.updateLifeArrayP1();
             if(this.players.player1.lives == 0){
-              this.openWinnerPopup('PLAYER 2 BEAT YOU UP!');
+              this.openWinnerPopup('PLAYER 2 BEAT PLAYER 1 UP!');
             }
 
 
