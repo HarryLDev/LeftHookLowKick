@@ -112,7 +112,7 @@ switchTurn() {
     // Call switchTurn() recursively to process the bot's move
     setTimeout(() => {
       this.switchTurn();
-    }, 1000); // Delay the bot's turn slightly for a more natural feel
+    }, 1000);
   } else if (this.players.player1.selectedPart != null && this.players.player2.selectedPart != null) {
     // Both players have made their selections, process the results
     let winner = this.determineWinner(this.players.player1.selectedPart, this.players.player2.selectedPart);
@@ -128,7 +128,7 @@ switchTurn() {
       this.players.player1.lives -= 1;
       this.updateLifeArrayP1();
       if (this.players.player1.lives === 0) {
-        this.openWinnerPopup('BOT BEAT YOU UP');
+        this.openWinnerPopup('BOT BEAT YOU UP!');
       }
     }
 

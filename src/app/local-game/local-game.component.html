@@ -65,7 +65,7 @@
           <!-- lives container -->
           <div>
             <div class="lives-container">
-              <span *ngFor="let _ of players.player1.livesArray" class="life-icon"></span>
+              <span *ngFor="let _ of players.player1.livesArray" class="p1-life-icon"></span>
             </div>
           </div>
 
@@ -76,11 +76,13 @@
       <!-- Attack Box -->
       <div class="player-label">{{this.currentPlayer.name}}'s' Turn</div>
          <!-- head -->
-         <button class="abutton" (click)="selectPart(this.currentPlayer.name, 'head')">
-          <svg width="100" height="100">
-          <circle cx="50" cy="50" r="40" fill="black" />
-        </svg>
-      </button>
+         <button class="abutton" [class.player1]="currentPlayer.name === 'Player 1'"
+         [class.player2]="currentPlayer.name === 'Player 2'"
+         (click)="selectPart(this.currentPlayer.name, 'head')">
+   <svg width="100" height="100">
+     <circle cx="50" cy="50" r="40" />
+   </svg>
+ </button>
 
         <!-- body and arms-->
 
@@ -90,7 +92,8 @@
               <rect x="50" y="0" width="40" height="120" fill="grey" />
             </svg>
              <!-- body -->
-            <button class="abutton" (click)="selectPart(this.currentPlayer.name, 'body')">
+            <button class="abutton" [class.player1]="currentPlayer.name === 'Player 1'"
+            [class.player2]="currentPlayer.name === 'Player 2'" (click)="selectPart(this.currentPlayer.name, 'body')">
             <svg width="100" height="130">
               <rect x="0" y="0" width="100" height="120" fill="black" />
             </svg>
@@ -104,7 +107,8 @@
         <!-- legs -->
 
         <div>
-          <button class="abutton" (click)="selectPart(this.currentPlayer.name, 'legs')">
+          <button class="abutton" [class.player1]="currentPlayer.name === 'Player 1'"
+          [class.player2]="currentPlayer.name === 'Player 2'" (click)="selectPart(this.currentPlayer.name, 'legs')">
              <svg width="100" height="120">
                <rect x="50" y="0" width="40" height="120" fill="black" />
              </svg>
@@ -167,7 +171,7 @@
           <!-- lives container -->
           <div>
             <div class="lives-container">
-              <span *ngFor="let _ of players.player2.livesArray" class="life-icon"></span>
+              <span *ngFor="let _ of players.player2.livesArray" class="p2-life-icon"></span>
             </div>
           </div>
 
