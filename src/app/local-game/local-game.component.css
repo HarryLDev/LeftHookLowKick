@@ -81,22 +81,12 @@ mat-slider{
   cursor: pointer;
 }
 
-.p1-life-icon {
+.life-icon {
   display: inline-block;
   margin-top: 20px;
   width: 20px;
   height: 20px;
   background-color: crimson;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-
-.p2-life-icon{
-  display: inline-block;
-  margin-top: 20px;
-  width: 20px;
-  height: 20px;
-  background-color: blue;
   border-radius: 50%;
   margin-right: 5px;
 }
@@ -125,23 +115,10 @@ mat-slider{
 
 .abutton:focus circle {
   fill: crimson;
-
 }
 
 .abutton:focus rect {
   fill: crimson;
-}
-
-/* crimson for player 1 */
-.abutton.player1:focus circle,
-.abutton.player1:focus rect {
-  fill: crimson;
-}
-
-/* blue for player 2 */
-.abutton.player2:focus circle,
-.abutton.player2:focus rect {
-  fill: blue;
 }
 .rounds{
   width: 80px;
